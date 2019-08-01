@@ -32,8 +32,9 @@ public class Utils {
     }
 
     private static Class<?> getNmsClass(String className) throws ClassNotFoundException {
-
-        return Class.forName("net.minecraft.server." + Bukkit.getServer().getClass().getPackage().getName().replace(".", ",").split(",")[3] + "." + className);
+        return Class.forName("net.minecraft.server." + Bukkit.getServer().getClass().getPackage().getName()
+            // 是不知道用 split("\\.") 吗 —— 754503921
+            .replace(".", ",").split(",")[3] + "." + className);
     }
 
     private static Class<?> getCraftbukkitClass(String className) throws ClassNotFoundException {
@@ -77,7 +78,7 @@ public class Utils {
         for (String key : main.getConfig().getConfigurationSection("Sheep").getKeys(false)){
             if (color(main.getConfig().getString("Sheep."+key+".name"))
                             .equalsIgnoreCase(name)){
-                sheepcfg = key;
+                sheepcfg = key; // 可以在循环中直接返回 —— 754503921
                 break;
             }
         }

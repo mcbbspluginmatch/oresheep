@@ -4,6 +4,7 @@ import com.google.common.primitives.Ints;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 
+// 弄这么多却只用了一个 —— 754503921
 public enum Sounds {
     AMBIENCE_CAVE("AMBIENCE_CAVE", "AMBIENT_CAVE", "AMBIENT_CAVE"),
     AMBIENCE_RAIN("AMBIENCE_RAIN", "WEATHER_RAIN", "WEATHER_RAIN"),

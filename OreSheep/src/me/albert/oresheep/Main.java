@@ -8,6 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.ArrayList;
 import java.util.List;
 
+// 没有使用构建工具
 public class Main extends JavaPlugin {
     private static Main instance;
     public static List<String> sheeps = new ArrayList<>();
