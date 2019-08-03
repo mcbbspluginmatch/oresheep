@@ -34,6 +34,7 @@ public class Utils {
     private static Class<?> getNmsClass(String className) throws ClassNotFoundException {
         return Class.forName("net.minecraft.server." + Bukkit.getServer().getClass().getPackage().getName()
             // 是不知道用 split("\\.") 吗 —— 754503921
+            // 人家可能没学过正则 发现直接写.不能用 - a39
             .replace(".", ",").split(",")[3] + "." + className);
     }
 
@@ -94,6 +95,7 @@ public class Utils {
         if (dropAmount.contains("-")){
             int min = Integer.parseInt(dropAmount.split("-")[0]);
             int max = Integer.parseInt(dropAmount.split("-")[1]);
+            // 如果可以的话 还是希望能把这个Random保存下来 虽然应该不会有同一毫秒执行到这里的情况 - a39
             Random random = new Random();
             int s = random.nextInt(max) % (max - min + 1) + min;
             drop.setAmount(s);

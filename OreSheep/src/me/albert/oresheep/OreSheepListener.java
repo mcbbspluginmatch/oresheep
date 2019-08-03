@@ -18,6 +18,7 @@ import org.bukkit.scheduler.BukkitScheduler;
 
 public class OreSheepListener implements Listener {
     private Main main = Main.getInstance();
+    //这个变量名有问题吧 - a39
     BukkitScheduler server = Bukkit.getServer().getScheduler();
     @EventHandler (ignoreCancelled = true)
     public void onShear(PlayerShearEntityEvent e){
